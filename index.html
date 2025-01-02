@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tigres Jersey Collection</title>
+  <style>
+    .gallery-section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  margin-bottom: 1rem;
+  color: #002244; /* Tigres blue */
+  font-size: 1.8rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Maximum 5 columns */
+  gap: 0.5rem; /* Small gap between items */
+  justify-items: center;
+}
+
+.gallery-item {
+  background: #fff;
+  border: 2px solid #ffcc00; /* Gold border */
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 100%; /* Ensure full width in the grid */
+  height: 100%; /* Ensure full height */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.gallery-item img {
+  width: 100%; /* Stretch image to fit the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 300px; /* Optional: limit max size */
+  max-height: 300px; /* Optional: limit max size */
+  object-fit: cover; /* Ensure the image fits within the square */
+  margin-bottom: 0.5rem;
+}
+
+.gallery-item p {
+  font-size: 0.9rem; /* Keep captions small */
+  color: #333;
+  margin: 0;
+  text-align: center;
+}
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #002244; /* Tigres blue */
+      color: #ffcc00; /* Tigres gold */
+      padding: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .carousel {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 600px; /* Adjust carousel width */
+  height: auto; /* Allow the carousel height to adjust based on the image */
+  overflow: hidden;
+  border: 8px solid #ffcc00; /* Gold frame */
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center; /* Vertically center images */
+  justify-content: center; /* Horizontally center images */
+}
+
+.carousel-images {
+  display: flex; /* Places images side-by-side */
+  transition: transform 0.5s ease-in-out; /* Smooth transitions */
+}
+
+.carousel-images img {
+  flex-shrink: 0; /* Prevent images from shrinking */
+  max-width: 100%; /* Image width adjusts to fit carousel */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the entire image fits within the frame */
+}
+
+
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #002244;
+      color: #ffcc00;
+      font-size: 1rem;
+    }
+
+    nav {
+  background-color: #002244; /* Tigres blue */
+  padding: 1rem 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffcc00; /* Tigres gold */
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #ffcc00;
+  color: #002244; /* Tigres blue */
+
+  
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 57rem; /* Space between the logo and the text */
+}
+
+.tigres-logo {
+  width: 50px; /* Adjust the size of the emblem */
+  height: auto; /* Maintain aspect ratio */
+}
+
+  </style>
+  
+</head>
+<body>
+
+<header>
+  <header>
+    <div class="header-content">
+      <img src="tigres-emblem.png" alt="Tigres Emblem" class="tigres-logo">
+      <div>
+        <h1>Cesar's Tigres Jersey Collection</h1>
+        <p>All my jerseys!</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="signed-jerseys.html">Signed Jerseys</a></li>
+        <li><a href="missing-jerseys.html">Missing Jerseys</a></li>
+        <li><a href="museum-display.html">Museum Display</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    
+      
+  
+</header>
+
+<div class="carousel">
+  <button class="arrow left" onclick="prevSlide()">&#8249;</button>
+  <div class="carousel-images">
+    <img src="jersey2025-3.png" alt="2025 Third Jesey">
+    <img src="jersey2024-1.png" alt="2024 Home Jersey">
+    <img src="jersey2024-2.png" alt="2024 Away Jersey">
+    <img src="jersey2024-3.png" alt="2024 Third Jersey">
+    <img src="jersey2024-4.png" alt="2025 Third Jesey">
+    <img src="jersey2024-5.png" alt="2025 Third Jesey">
+    <img src="jersey2024-6.png" alt="2025 Third Jesey">
+    <img src="jersey2024-7.png" alt="2025 Third Jesey">
+    <img src="jersey2024-8.png" alt="2025 Third Jesey">
+    <img src="jersey2024-9.png" alt="2025 Third Jesey">
+    <img src="jersey2024-10.png" alt="2025 Third Jesey">
+    <img src="jersey2023-1.png" alt="2025 Third Jesey">
+    <img src="jersey2023-2.png" alt="2025 Third Jesey">
+    <img src="jersey2023-3.png" alt="2025 Third Jesey">
+    <img src="jersey2023-4.png" alt="2025 Third Jesey">
+    <img src="jersey2023-5.png" alt="2025 Third Jesey">
+    <img src="jersey2023-6.png" alt="2025 Third Jesey">
+    <img src="jersey2023-7.png" alt="2025 Third Jesey">
+    <img src="jersey2023-8.png" alt="2025 Third Jesey">
+    <img src="jersey2022-1.png" alt="2025 Third Jesey">
+    <img src="jersey2022-2.png" alt="2025 Third Jesey">
+    <img src="jersey2022-3.png" alt="2025 Third Jesey">
+    <img src="jersey2022-4.png" alt="2025 Third Jesey">
+    <img src="jersey2021-1.png" alt="2025 Third Jesey">
+    <img src="jersey2021-2.png" alt="2025 Third Jesey">
+    <img src="jersey2021-3.png" alt="2025 Third Jesey">
+    <img src="jersey2020-1.png" alt="2025 Third Jesey">
+    <img src="jersey2020-2.png" alt="2025 Third Jesey">
+    <img src="jersey2020-3.png" alt="2025 Third Jesey">
+    <img src="jersey2020-4.png" alt="2025 Third Jesey">
+    <img src="jersey2020-5.png" alt="2025 Third Jesey">
+    <img src="jersey2019-1.png" alt="2025 Third Jesey">
+    <img src="jersey2019-2.png" alt="2025 Third Jesey">
+    <img src="jersey2019-3.png" alt="2025 Third Jesey">
+    <img src="jersey2018-1.png" alt="2025 Third Jesey">
+    <img src="jersey2018-2.png" alt="2025 Third Jesey">
+    <img src="jersey2017-1.png" alt="2025 Third Jesey">
+    <img src="jersey2017-2.png" alt="2025 Third Jesey">
+    <img src="jersey2017-3.png" alt="2025 Third Jesey">
+    <img src="jersey2016-1.png" alt="2025 Third Jesey">
+    <img src="jersey2016-2.png" alt="2025 Third Jesey">
+    <img src="jersey2016-3.png" alt="2025 Third Jesey">
+    <img src="jersey2015-1.png" alt="2025 Third Jesey">
+    <img src="jersey2015-3.png" alt="2025 Third Jesey">
+    <img src="jersey2014-1.png" alt="2025 Third Jesey">
+    <img src="jersey2014-3.png" alt="2025 Third Jesey">
+    <img src="jersey2013-1.png" alt="2025 Third Jesey">
+    <img src="jersey2013-2.png" alt="2025 Third Jesey">
+    <img src="jersey2012-1.png" alt="2025 Third Jesey">
+    <img src="jersey2012-2.png" alt="2025 Third Jesey">
+    <img src="jersey2011-1.png" alt="2025 Third Jesey">
+    <img src="jersey2011-2.png" alt="2025 Third Jesey">
+    <img src="jersey2010-1.png" alt="2025 Third Jesey">
+    <img src="jersey2010-2.png" alt="2025 Third Jesey">
+    <img src="jersey2009-1.png" alt="2025 Third Jesey">
+    <img src="jersey2009-2.png" alt="2025 Third Jesey">
+    <img src="jersey2007-1.png" alt="2025 Third Jesey">
+    <img src="jersey2007-2.png" alt="2025 Third Jesey">
+    <img src="jersey2006-1.png" alt="2025 Third Jesey">
+    <img src="jersey2006-2.png" alt="2025 Third Jesey">
+    <img src="jersey2006-3.png" alt="2025 Third Jesey">
+    <img src="jersey2006-4.png" alt="2025 Third Jesey">
+    <img src="jersey2005-1.png" alt="2025 Third Jesey">
+    <img src="jersey2003-1.png" alt="2025 Third Jesey">
+    <img src="jersey2003-3.png" alt="2025 Third Jesey">
+    <img src="jersey2003-4.png" alt="2025 Third Jesey">
+    <img src="jersey2000-1.png" alt="2025 Third Jesey">
+    <img src="jersey2000-2.png" alt="2025 Third Jesey">
+    <img src="jersey1999-1.png" alt="2025 Third Jesey">
+    <img src="jersey1999-2.png" alt="2025 Third Jesey">
+    <img src="jersey1999-3.png" alt="2025 Third Jesey">
+    <img src="jersey1997-1.png" alt="2025 Third Jesey">
+    <img src="jersey1997-2.png" alt="2025 Third Jesey">
+    <img src="jersey1997-3.png" alt="2025 Third Jesey">
+    <img src="jersey1996-1.png" alt="2025 Third Jesey">
+    <img src="jersey1996-3.png" alt="2025 Third Jesey">
+    <img src="jersey1983-1.png" alt="2025 Third Jesey">
+
+  </div>
+  <button class="arrow right" onclick="nextSlide()">&#8250;</button>
+</div>
+
+<footer>
+  <p>Un Tigre nunca deja solo a otro Tigre! 💛💙</p>
+</footer>
+
+<script>
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    const slides = document.querySelector('.carousel-images');
+    const totalSlides = slides.children.length;
+
+    // Ensure the index is within valid bounds
+    if (index >= totalSlides) {
+      currentSlide = 0; // Loop back to the first slide
+    } else if (index < 0) {
+      currentSlide = totalSlides - 1; // Loop to the last slide
+    } else {
+      currentSlide = index; // Update to the valid index
+    }
+
+    // Update the transform property with precise percentage
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Autoplay functionality with precise timing
+  setInterval(() => {
+    nextSlide();
+  }, 5000); // Change slide every 5 seconds
+</script>
+
+
+
+</body>
+</html>
+
+<section class="gallery-section">
+    <h2>Jersey Gallery</h2>
+    
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="jersey2025-3.png" alt="2024 Home Jersey">
+            <p>2025 Third Jersey</p>
+          </div>
+      <div class="gallery-item">
+        <img src="jersey2024-1.png" alt="2024 Home Jersey">
+        <p>2024 Home Jersey</p>
+      </div>
+      <div class="gallery-item">
+        <img src="jersey2024-2.png" alt="2024 Away Jersey">
+        <p>2024 Away Jersey</p>
+      </div>
+      <div class="gallery-item">
+        <img src="jersey2024-3.png" alt="2015 Limited Edition Jersey">
+        <p>2024 Third Jersey</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="jersey2024-8.png" alt="2015 Limited Edition Jersey">
+        <p>2024 Goalie Uniform Home</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="jersey2024-9.png" alt="2015 Limited Edition Jersey">
+        <p>2024 Goalie Uniform Away</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="jersey2024-10.png" alt="2015 Limited Edition Jersey">
+        <p>2024 Tigres Femenil Jersey</p>
+    </div>
+   
+      <div class="gallery-item">
+        <img src="jersey2024-4.png" alt="2015 Limited Edition Jersey">
+        <p>2024 Earth Day Goalie Jersey</p>
+        </div>
+        <div class="gallery-item">
+            <img src="jersey2024-5.png" alt="2024 Special Edition Jersey">
+            <p>2024 Earth Day Male Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2024-6.png" alt="2024 Special Edition Jersey">
+            <p>2024 Earth Day Female Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2024-7.png" alt="2024 Special Edition Jersey">
+            <p>2024 Hispanic Heritage Month Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2023-1.png" alt="2024 Special Edition Jersey">
+            <p>2023 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2023-2.png" alt="2024 Special Edition Jersey">
+            <p>2023 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2023-3.png" alt="2024 Special Edition Jersey">
+            <p>2023 Third Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2023-4.png" alt="2024 Special Edition Jersey">
+            <p>2023 Earth Day Jersey</p>
+          </div>
+          
+
+          <div class="gallery-item">
+            <img src="jersey2023-5.png" alt="2024 Special Edition Jersey">
+            <p>2023 Goalie Uniform Home</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2023-6.png" alt="2024 Special Edition Jersey">
+            <p>2023 Hispanic Heritage Month Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2023-7.png" alt="2024 Special Edition Jersey">
+            <p>2023 Tigres Femenil Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2023-8.png" alt="2024 Special Edition Jersey">
+            <p>2023 Tigres Adidas Classic Long-sleeve</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2022-1.png" alt="2024 Special Edition Jersey">
+            <p>2022 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2022-2.png" alt="2024 Special Edition Jersey">
+            <p>2022 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2022-3.png" alt="2024 Special Edition Jersey">
+            <p>2022 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2022-4.png" alt="2024 Special Edition Jersey">
+            <p>2022 Tigres Femenil Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2021-1.png" alt="2024 Special Edition Jersey">
+            <p>2021 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2021-2.png" alt="2024 Special Edition Jersey">
+            <p>2021 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2021-3.png" alt="2024 Special Edition Jersey">
+            <p>2021 Third Jersey</p>
+          </div><div class="gallery-item">
+            <img src="jersey2020-1.png" alt="2024 Special Edition Jersey">
+            <p>2020 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2020-2.png" alt="2024 Special Edition Jersey">
+            <p>2020 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2020-3.png" alt="2024 Special Edition Jersey">
+            <p>2020 Third Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2020-4.png" alt="2024 Special Edition Jersey">
+            <p>2020 Away Club World Cup Jersey</p>
+          </div>
+    
+          <div class="gallery-item">
+            <img src="jersey2020-5.png" alt="2024 Special Edition Jersey">
+            <p>2020 Goalie Uniform Home</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2019-1.png" alt="2024 Special Edition Jersey">
+            <p>2019 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2019-2.png" alt="2024 Special Edition Jersey">
+            <p>2019 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2019-3.png" alt="2024 Special Edition Jersey">
+            <p>2019 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2018-1.png" alt="2024 Special Edition Jersey">
+            <p>2018 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2018-2.png" alt="2024 Special Edition Jersey">
+            <p>2018 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2017-1.png" alt="2024 Special Edition Jersey">
+            <p>2017 Home Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2017-2.png" alt="2024 Special Edition Jersey">
+            <p>2017 Away Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2017-3.png" alt="2024 Special Edition Jersey">
+            <p>2017 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2016-1.png" alt="2024 Special Edition Jersey">
+            <p>2016 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2016-2.png" alt="2024 Special Edition Jersey">
+            <p>2016 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2016-3.png" alt="2024 Special Edition Jersey">
+            <p>2016 Goalie Uniform Away</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2015-1.png" alt="2024 Special Edition Jersey">
+            <p>2015 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2015-3.png" alt="2024 Special Edition Jersey">
+            <p>2015 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2014-1.png" alt="2024 Special Edition Jersey">
+            <p>2014 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2014-3.png" alt="2024 Special Edition Jersey">
+            <p>2014 Third Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2013-1.png" alt="2024 Special Edition Jersey">
+            <p>2013 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2013-2.png" alt="2024 Special Edition Jersey">
+            <p>2013 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2012-1.png" alt="2024 Special Edition Jersey">
+            <p>2012 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2012-2.png" alt="2024 Special Edition Jersey">
+            <p>2012 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2011-1.png" alt="2024 Special Edition Jersey">
+            <p>2011 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2011-2.png" alt="2024 Special Edition Jersey">
+            <p>2011 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2010-1.png" alt="2024 Special Edition Jersey">
+            <p>2010 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2010-2.png" alt="2024 Special Edition Jersey">
+            <p>2010 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2009-1.png" alt="2024 Special Edition Jersey">
+            <p>2009 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2009-2.png" alt="2024 Special Edition Jersey">
+            <p>2009 Away Jersey</p>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="jersey2007-1.png" alt="2024 Special Edition Jersey">
+            <p>2007 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2007-2.png" alt="2024 Special Edition Jersey">
+            <p>2007 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2006-1.png" alt="2024 Special Edition Jersey">
+            <p>2006 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2006-2.png" alt="2024 Special Edition Jersey">
+            <p>2006 Away Jersey</p>
+        </div>
+        <div class="gallery-item">
+          <img src="jersey2006-3.png" alt="2024 Special Edition Jersey">
+          <p>2006 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2006-4.png" alt="2024 Special Edition Jersey">
+            <p>2006 Special Jersey</p>
+            </div>
+
+          <div class="gallery-item">
+            <img src="jersey2005-1.png" alt="2024 Special Edition Jersey">
+            <p>2005 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2003-1.png" alt="2024 Special Edition Jersey">
+            <p>2003 Home Jersey</p>
+        </div>
+        <div class="gallery-item">
+          <img src="jersey2003-3.png" alt="2024 Special Edition Jersey">
+          <p>2003 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey2003-4.png" alt="2024 Special Edition Jersey">
+            <p>2003 Goalie Uniform Other</p>
+            </div>
+
+          <div class="gallery-item">
+            <img src="jersey2000-1.png" alt="2024 Special Edition Jersey">
+            <p>2000 Home Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey2000-2.png" alt="2024 Special Edition Jersey">
+            <p>2000 Away Jersey</p>
+        </div>
+        <div class="gallery-item">
+          <img src="jersey1999-1.png" alt="2024 Special Edition Jersey">
+          <p>1999 Home Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey1999-2.png" alt="2024 Special Edition Jersey">
+            <p>1999 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey1999-3.png" alt="2024 Special Edition Jersey">
+            <p>1999 Training Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey1997-1.png" alt="2024 Special Edition Jersey">
+            <p>1997 Home Jersey</p>
+        </div>
+        <div class="gallery-item">
+          <img src="jersey1997-2.png" alt="2024 Special Edition Jersey">
+          <p>1997 Away Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey1997-3.png" alt="2024 Special Edition Jersey">
+            <p>1997 Third Jersey</p>
+          </div>
+          <div class="gallery-item">
+            <img src="jersey1996-1.png" alt="2024 Special Edition Jersey">
+            <p>1996 Home Jersey</p>
+        </div>
+        <div class="gallery-item">
+          <img src="jersey1996-3.png" alt="2024 Special Edition Jersey">
+          <p>1996 Third Jersey</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="jersey1983-1.png" alt="2024 Special Edition Jersey">
+            <p>1983 Home Jersey</p>
+            </div>
+
+ 
+      <!-- Add more jerseys as needed -->
+    </div>
+  </section>
+  

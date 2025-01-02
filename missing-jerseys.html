@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missing Jerseys</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #002244; /* Tigres blue */
+      color: #ffcc00; /* Tigres gold */
+      padding: 1rem;
+    }
+
+    .header-content {
+      margin-bottom: 1rem;
+    }
+
+    .header-content h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffcc00;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #ffcc00;
+      color: #002244;
+    }
+
+    .gallery-section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      margin-bottom: 1rem;
+      color: #002244;
+      font-size: 1.8rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); /* Maximum 5 columns */
+      gap: 0.5rem;
+      justify-items: center;
+    }
+
+    .gallery-item {
+      background: #fff;
+      border: 2px solid #ffcc00;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-item p {
+      font-size: 0.9rem;
+      color: #333;
+      margin: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #002244;
+      color: #ffcc00;
+    }
+
+    .header-content {
+  display: flex;
+  align-items: center;
+  gap: 57rem; /* Space between the logo and the text */
+}
+
+.tigres-logo {
+  width: 50px; /* Adjust the size of the emblem */
+  height: auto; /* Maintain aspect ratio */
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="tigres-emblem.png" alt="Tigres Emblem" class="tigres-logo">
+      <div>
+        <h1>Cesar's Tigres Jersey Collection</h1>
+        <p>All my jerseys!</p>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="signed-jerseys.html">Signed Jerseys</a></li>
+        <li><a href="missing-jerseys.html">Missing Jerseys</a></li>
+        <li><a href="museum-display.html">Museum Display</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="gallery-section">
+    <h2>Missing Jersey List</h2>
+    <div class="gallery-grid">
+      <!-- List of missing jerseys -->
+      <div class="gallery-item">
+        <img src="missing-jersey1.png" alt="Missing Jersey 1">
+        <p>2020 Club World Cup Jersey with no sponsors</p>
+      </div>
+      <div class="gallery-item">
+        <img src="missing-jersey9.png" alt="Missing Jersey 2">
+        <p>2017 Third Jersey</p>
+      </div>
+      <div class="gallery-item">
+        <img src="missing-jersey2.png" alt="Missing Jersey 2">
+        <p>2016 Third Jersey</p>
+      </div>
+      <div class="gallery-item">
+        <img src="missing-jersey3.png" alt="Missing Jersey 2">
+        <p>2013 Special Jersey</p>
+      </div>
+      
+
+      <div class="gallery-item">
+        <img src="missing-jersey5.png" alt="Missing Jersey 2">
+        <p>2002 Home Jersey</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="missing-jersey4.png" alt="Missing Jersey 2">
+        <p>2001 Home Jersey</p>
+      </div>
+
+
+      <div class="gallery-item">
+        <img src="missing-jersey7.png" alt="Missing Jersey 2">
+        <p>1994 Home Jersey</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="missing-jersey8.png" alt="Missing Jersey 2">
+        <p>1994 Away Jersey</p>
+      </div>
+
+
+      <div class="gallery-item">
+        <img src="missing-jersey6.png" alt="Missing Jersey 2">
+        <p>1983 Away Jersey</p>
+      </div>
+
+
+      <!-- Add more missing jerseys -->
+    </div>
+  </section>
+
+  <footer>
+    <p>Un Tigre nunca deja solo a otro Tigre! 💛💙</p>
+  </footer>
+</body>
+</html>
+
